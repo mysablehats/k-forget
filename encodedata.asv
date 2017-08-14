@@ -1,0 +1,12 @@
+function edata = encodedata(data, encodecomplexity)
+for i =1:length(data)
+    edata(i) = encodefun(data(i),encodecomplexity);
+end
+
+end
+function edatai = encodefun(datai,encodecomplexity)
+    %my current encoder will just concatenate the data into longer vectors.
+    for i = 1:length(datai)        
+        edatai(i) = reshape(datai(i:i+encodecomplexity,:),1,[]);
+    end
+end

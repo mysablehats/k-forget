@@ -13,12 +13,15 @@ classdef Simvarkf < Simvar
             
             %% Post initialization
             simvar.method = 'kforget';
-            simvar.excfun = @(data,ii)executioncore_in_starterscript(simvar(ii).arq_connect, data);
+
             
             simvar.tolerance = 0.01;
             simvar.acc = .95;
             simvar.classfun = @(x,is, isnt)knearestclass(x, is, isnt);
             
+            %%% This needs to be the last statement after everything is
+            %%% done...
+            simvar.excfun = @(data,ii)classkforget(simvar(ii), data);
         end
     end
 end

@@ -1,7 +1,7 @@
 function edata = encodedata(data, encodecomplexity)
 edata = [];
 for i =1:length(data)
-    edata = cat(1, encodefun(data(i),encodecomplexity),edata);
+    edata = cat(2, encodefun(data(:,i),encodecomplexity),edata);
 end
 
 end

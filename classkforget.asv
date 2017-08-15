@@ -1,0 +1,9 @@
+function outs = classkforget(s, datavar)
+%s = simpar;
+outs = [];
+for i = 1:size(datavar.train.y ,1)
+    [is,isnt] = segmentdataset(datavar.train,i);
+    [encodercomplexity, memis] = kforget(is, isnt, s);
+    
+end
+end

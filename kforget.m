@@ -1,7 +1,7 @@
 function [encodercomplexity, memis] = kforget(is, isnt, s)
 encodercomplexity = 0;
 realacc = 0;
-while(realacc< accuracy)
+while(realacc< s.acc)
     %% increase complexity of the encoding - specialization step
     encodercomplexity = encodercomplexity + 1;
     %% encode is and isnt
